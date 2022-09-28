@@ -1,8 +1,8 @@
 class BankAccount:
     list_accounts = []
 
-    def __init__(self, opening_val):
-        self.percent_rate = 0.01
+    def __init__(self, opening_val, interest_rate):
+        self.percent_rate = interest_rate
         if  opening_val > 0:
             self.balance = opening_val
         else:
@@ -37,8 +37,8 @@ class BankAccount:
             print(f"Balance: ${cls.list_accounts[x].balance}")        
 
 
-account1 = BankAccount(50)
-account2 = BankAccount(0)
+account1 = BankAccount(50, 0.02)
+account2 = BankAccount(0, 0.01)
 
 account1.deposit(15).deposit(25).deposit(100).withdraw(52).yield_interest().display_account_info()
 account2.deposit(10).deposit(50).withdraw(10).withdraw(15).withdraw(35).withdraw(10).yield_interest().display_account_info()
